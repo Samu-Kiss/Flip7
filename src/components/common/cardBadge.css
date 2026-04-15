@@ -1,0 +1,25 @@
+.card-badge-scene {
+  display: inline-block;
+  animation: card-badge-enter 260ms ease both;
+  transform-origin: center bottom;
+}
+
+.card-badge-face {
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.card-badge-scene:hover .card-badge-face {
+  transform: translateY(-3px) rotate(-1deg);
+  box-shadow: 0 12px 20px rgba(2, 6, 23, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+@keyframes card-badge-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
