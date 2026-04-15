@@ -1,0 +1,94 @@
+.sim-loading-deck {
+  position: relative;
+  width: 190px;
+  height: 92px;
+  margin: 0 auto;
+}
+
+.sim-loading-card-slot {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform-origin: center bottom;
+}
+
+.sim-loading-card-1 {
+  margin-left: -72px;
+  animation: sim-card-sway-left 1100ms ease-in-out infinite;
+}
+
+.sim-loading-card-2 {
+  margin-left: -26px;
+  animation: sim-card-lift-center 980ms ease-in-out infinite;
+}
+
+.sim-loading-card-3 {
+  margin-left: 20px;
+  animation: sim-card-sway-right 1100ms ease-in-out infinite;
+}
+
+.sim-loading-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.sim-loading-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #818cf8;
+  opacity: 0.25;
+  animation: sim-dot-pulse 900ms ease-in-out infinite;
+}
+
+.sim-loading-dots span:nth-child(2) {
+  animation-delay: 150ms;
+}
+
+.sim-loading-dots span:nth-child(3) {
+  animation-delay: 300ms;
+}
+
+@keyframes sim-card-sway-left {
+  0%,
+  100% {
+    transform: translateX(0) translateY(2px) rotate(-9deg);
+  }
+  50% {
+    transform: translateX(2px) translateY(-4px) rotate(-14deg);
+  }
+}
+
+@keyframes sim-card-lift-center {
+  0%,
+  100% {
+    transform: translateY(4px) scale(0.98);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.02);
+  }
+}
+
+@keyframes sim-card-sway-right {
+  0%,
+  100% {
+    transform: translateX(0) translateY(2px) rotate(9deg);
+  }
+  50% {
+    transform: translateX(-2px) translateY(-4px) rotate(14deg);
+  }
+}
+
+@keyframes sim-dot-pulse {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+}
