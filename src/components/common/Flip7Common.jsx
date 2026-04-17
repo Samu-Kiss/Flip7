@@ -14,20 +14,20 @@ export function CardBadge({ card, size = "md" }) {
 
   const isSmall = size === "sm";
   const dims = isSmall
-    ? { width: 40, height: 56, marginRight: 3, marginBottom: 3 }
-    : { width: 52, height: 72, marginRight: 5, marginBottom: 5 };
+    ? { width: 52, height: 72, marginRight: 4, marginBottom: 4 }
+    : { width: 72, height: 100, marginRight: 6, marginBottom: 6 };
 
   const centerFontSize = isSmall
     ? compactValue.length >= 6
-      ? 8
-      : compactValue.length >= 4
-        ? 9
-        : 14
-    : compactValue.length >= 6
       ? 10
       : compactValue.length >= 4
         ? 12
-        : 20;
+        : 18
+    : compactValue.length >= 6
+      ? 13
+      : compactValue.length >= 4
+        ? 16
+        : 28;
 
   const cardStyle = {
     width: dims.width,
@@ -36,7 +36,7 @@ export function CardBadge({ card, size = "md" }) {
     marginBottom: dims.marginBottom,
     display: "inline-flex",
     position: "relative",
-    borderRadius: 10,
+    borderRadius: 12,
     border: `2px solid ${accent}`,
     boxSizing: "border-box",
     background: "linear-gradient(165deg,#ffffff 0%,#f1f5f9 50%,#dbeafe 100%)",
@@ -54,9 +54,9 @@ export function CardBadge({ card, size = "md" }) {
         style={{
           position: "absolute",
           top: 4,
-          left: 5,
+          left: 6,
           color: accent,
-          fontSize: isSmall ? 7 : 9,
+          fontSize: isSmall ? 9 : 11,
           fontWeight: 900,
           letterSpacing: -0.2
         }}
@@ -81,11 +81,11 @@ export function CardBadge({ card, size = "md" }) {
       <span
         style={{
           position: "absolute",
-          right: 5,
+          right: 6,
           bottom: 4,
           transform: "rotate(180deg)",
           color: accent,
-          fontSize: isSmall ? 7 : 9,
+          fontSize: isSmall ? 9 : 11,
           fontWeight: 900,
           letterSpacing: -0.2
         }}
@@ -116,7 +116,7 @@ export function StrategyBar({ shouldHit, reason, expectedScoreIfHit }) {
         <div style={{ fontWeight: 800, fontSize: 13, color: shouldHit ? "#4ade80" : "#fbbf24" }}>
           Estrategia optima: {shouldHit ? "HIT" : "STAY"}
         </div>
-        <div style={{ fontSize: 11, color: "#64748b", marginTop: 2 }}>
+        <div style={{ fontSize: 11, color: "#94a3b8", marginTop: 2 }}>
           {reason} · EV si hit: {expectedScoreIfHit.toFixed(1)} pts
         </div>
       </div>
@@ -135,13 +135,13 @@ export function CardPicker({ onPickMine, onPickOther, numberCountsRemaining, myR
   return (
     <div style={{ background: "#070714", border: "1px solid #1e1b4b", borderRadius: 12, padding: 14, marginBottom: 14 }}>
       <div style={{ display: "flex", gap: 6, marginBottom: 12, alignItems: "center", flexWrap: "wrap" }}>
-        <span style={{ fontSize: 11, color: "#475569", fontWeight: 700 }}>Carta que salio:</span>
+        <span style={{ fontSize: 11, color: "#94a3b8", fontWeight: 700 }}>Carta que salio:</span>
         <button
           onClick={() => setMode("mine")}
           style={{
             background: mode === "mine" ? "#4f46e5" : "#0f172a",
             border: `1px solid ${mode === "mine" ? "#6366f1" : "#1e1b4b"}`,
-            color: mode === "mine" ? "#fff" : "#64748b",
+            color: mode === "mine" ? "#fff" : "#94a3b8",
             padding: "4px 12px",
             borderRadius: 6,
             cursor: "pointer",
@@ -157,7 +157,7 @@ export function CardPicker({ onPickMine, onPickOther, numberCountsRemaining, myR
           style={{
             background: mode === "other" ? "#1e3a5f" : "#0f172a",
             border: `1px solid ${mode === "other" ? "#1d4ed8" : "#1e1b4b"}`,
-            color: mode === "other" ? "#60a5fa" : "#64748b",
+            color: mode === "other" ? "#60a5fa" : "#94a3b8",
             padding: "4px 12px",
             borderRadius: 6,
             cursor: "pointer",
@@ -176,7 +176,7 @@ export function CardPicker({ onPickMine, onPickOther, numberCountsRemaining, myR
               marginLeft: "auto",
               background: "#1e1b4b",
               border: "1px solid #312e81",
-              color: canUndo ? "#818cf8" : "#334155",
+              color: canUndo ? "#a5b4fc" : "#64748b",
               padding: "4px 10px",
               borderRadius: 6,
               cursor: canUndo ? "pointer" : "not-allowed",
@@ -189,7 +189,7 @@ export function CardPicker({ onPickMine, onPickOther, numberCountsRemaining, myR
           </button>
         )}
       </div>
-      <div style={{ fontSize: 10, color: "#334155", marginBottom: 10 }}>
+      <div style={{ fontSize: 10, color: "#94a3b8", marginBottom: 10 }}>
         {mode === "mine" ? "Toca el numero o carta que recibiste:" : "Carta que salio del mazo para otro jugador o fue descartada:"}
       </div>
 
@@ -213,7 +213,7 @@ export function CardPicker({ onPickMine, onPickOther, numberCountsRemaining, myR
                   fontFamily: "inherit",
                   fontWeight: 900,
                   opacity: exhausted ? 0.3 : 1,
-                  width: 56,
+                  width: 68,
                   textAlign: "center",
                   display: "inline-flex",
                   alignItems: "center",
@@ -253,7 +253,7 @@ export function CardPicker({ onPickMine, onPickOther, numberCountsRemaining, myR
                 fontFamily: "inherit",
                 fontWeight: 800,
                 fontSize: 12,
-                width: 56,
+                width: 68,
                 display: "inline-flex",
                 alignItems: "center",
                 justifyContent: "center"
@@ -285,7 +285,7 @@ export function CardPicker({ onPickMine, onPickOther, numberCountsRemaining, myR
                 fontFamily: "inherit",
                 fontWeight: 700,
                 fontSize: 11,
-                width: 56,
+                width: 68,
                 display: "inline-flex",
                 alignItems: "center",
                 justifyContent: "center"

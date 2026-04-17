@@ -1,6 +1,8 @@
 export const mainStyles = {
   page: {
     fontFamily: "'Courier New', monospace",
+    fontSize: 16,
+    zoom: 1.14,
     background: "#0a0a0f",
     minHeight: "100vh",
     color: "#e2e8f0",
@@ -8,11 +10,11 @@ export const mainStyles = {
   },
   header: {
     background: "linear-gradient(135deg,#1e1b4b 0%,#0f172a 60%,#1a0e2e 100%)",
-    padding: "18px 20px 12px",
+    padding: "22px 22px 14px",
     borderBottom: "1px solid #312e81"
   },
   shell: {
-    maxWidth: 700,
+    maxWidth: 860,
     margin: "0 auto"
   },
   headerTitleRow: {
@@ -28,14 +30,14 @@ export const mainStyles = {
     overflowX: "auto"
   },
   tabsInner: {
-    maxWidth: 700,
+    maxWidth: 860,
     margin: "0 auto",
     display: "flex",
     minWidth: "max-content"
   },
   content: {
-    maxWidth: 700,
+    maxWidth: 860,
     margin: "0 auto",
-    padding: "16px"
+    padding: "22px"
   }
 };

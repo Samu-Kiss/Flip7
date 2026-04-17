@@ -26,9 +26,11 @@ export function RealTab({
   return (
     <div>
       <div style={realTabStyles.helpBox}>
-        <strong style={{ color: "#a78bfa" }}>Como usar:</strong> Registra cada carta que sale del mazo, ya sea tuya o de
-        otro jugador. El motor calcula probabilidades exactas sobre el mazo restante. Las cartas vistas no regresan hasta
-        que hagas reset del mazo.
+        <strong style={{ color: "#c4b5fd" }}>Como usar:</strong>{" "}
+        <span style={{ color: "#cbd5e1" }}>
+          Registra cada carta que sale del mazo, ya sea tuya o de otro jugador. El motor calcula probabilidades exactas
+          sobre el mazo restante. Las cartas vistas no regresan hasta que hagas reset del mazo.
+        </span>
       </div>
 
       <div style={realTabStyles.statsGrid}>
@@ -41,11 +43,11 @@ export function RealTab({
           <div style={{ fontSize: 20, fontWeight: 900, color: bpColor(realBustProb) }}>{(realBustProb * 100).toFixed(1)}%</div>
         </div>
         <div style={realTabStyles.statCard}>
-          <div style={{ fontSize: 9, color: "#64748b", fontWeight: 700 }}>CARTAS</div>
+          <div style={{ fontSize: 9, color: "#94a3b8", fontWeight: 700 }}>CARTAS</div>
           <div style={{ fontSize: 20, fontWeight: 900, color: "#94a3b8" }}>{myRealNumbers.length}/7</div>
         </div>
         <div style={realTabStyles.statCard}>
-          <div style={{ fontSize: 9, color: "#64748b", fontWeight: 700 }}>MAZO REST.</div>
+          <div style={{ fontSize: 9, color: "#94a3b8", fontWeight: 700 }}>MAZO REST.</div>
           <div style={{ fontSize: 20, fontWeight: 900, color: "#94a3b8" }}>{realRemainingDeck.length}</div>
         </div>
       </div>
@@ -125,7 +127,7 @@ export function RealTab({
         </div>
         <div style={{ minHeight: 30 }}>
           {myRealNumbers.length === 0 ? (
-            <span style={{ color: "#334155", fontSize: 12 }}>Sin cartas aun...</span>
+            <span style={{ color: "#64748b", fontSize: 12 }}>Sin cartas aun...</span>
           ) : (
             myRealNumbers.map((n, i) => <CardBadge key={i} card={{ type: "number", value: n }} />)
           )}
@@ -195,7 +197,7 @@ export function RealTab({
 
       <div ref={realLogRef} style={realTabStyles.logBox}>
         {realLog.length === 0 ? (
-          <span style={{ color: "#334155" }}>Historial de la partida...</span>
+          <span style={{ color: "#64748b" }}>Historial de la partida...</span>
         ) : (
           [...realLog].reverse().map(e => (
             <div
@@ -208,7 +210,7 @@ export function RealTab({
                       ? "#4ade80"
                       : e.type === "warn"
                         ? "#fbbf24"
-                        : "#64748b",
+                          : "#94a3b8",
                 marginBottom: 2,
                 lineHeight: 1.5
               }}
@@ -218,7 +220,7 @@ export function RealTab({
           ))
         )}
       </div>
-      <div style={{ fontSize: 9, color: "#334155", marginTop: 5, textAlign: "center" }}>
+      <div style={{ fontSize: 9, color: "#64748b", marginTop: 5, textAlign: "center" }}>
         Cartas vistas: {seenCards.length} - Restantes en mazo: {realRemainingDeck.length}
       </div>
     </div>

@@ -1,29 +1,29 @@
 .sim-loading-deck {
   position: relative;
-  width: 190px;
-  height: 92px;
+  width: 250px;
+  height: 126px;
   margin: 0 auto;
 }
 
 .sim-loading-card-slot {
   position: absolute;
-  top: 8px;
+  top: 12px;
   left: 50%;
   transform-origin: center bottom;
 }
 
 .sim-loading-card-1 {
-  margin-left: -72px;
+  margin-left: -96px;
   animation: sim-card-sway-left 1100ms ease-in-out infinite;
 }
 
 .sim-loading-card-2 {
-  margin-left: -26px;
+  margin-left: -36px;
   animation: sim-card-lift-center 980ms ease-in-out infinite;
 }
 
 .sim-loading-card-3 {
-  margin-left: 20px;
+  margin-left: 24px;
   animation: sim-card-sway-right 1100ms ease-in-out infinite;
 }
 

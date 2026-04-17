@@ -30,7 +30,7 @@ export function PlayTab({
           <div style={{ fontSize: 26, fontWeight: 900, color: bpColor(bustProb) }}>{(bustProb * 100).toFixed(1)}%</div>
         </div>
         <div style={playTabStyles.statCard}>
-          <div style={{ fontSize: 10, color: "#64748b", fontWeight: 700, marginBottom: 4 }}>CARTAS</div>
+          <div style={{ fontSize: 10, color: "#94a3b8", fontWeight: 700, marginBottom: 4 }}>CARTAS</div>
           <div style={{ fontSize: 26, fontWeight: 900, color: "#94a3b8" }}>{myNumbers.length}/7</div>
         </div>
       </div>
@@ -76,7 +76,7 @@ export function PlayTab({
         <div style={{ fontSize: 11, color: "#4f46e5", fontWeight: 700, marginBottom: 8 }}>TUS CARTAS</div>
         <div style={{ minHeight: 32 }}>
           {myNumbers.length === 0 ? (
-            <span style={{ color: "#334155", fontSize: 12 }}>Sin cartas aun...</span>
+            <span style={{ color: "#64748b", fontSize: 12 }}>Sin cartas aun...</span>
           ) : (
             myNumbers.map((n, i) => <CardBadge key={i} card={{ type: "number", value: n }} />)
           )}
@@ -132,7 +132,7 @@ export function PlayTab({
             style={{
               background: myNumbers.length === 0 ? "#1e1b4b" : "linear-gradient(135deg,#065f46,#047857)",
               border: "none",
-              color: myNumbers.length === 0 ? "#334155" : "#fff",
+              color: myNumbers.length === 0 ? "#94a3b8" : "#fff",
               padding: "14px",
               borderRadius: 10,
               cursor: myNumbers.length === 0 ? "not-allowed" : "pointer",
@@ -149,7 +149,7 @@ export function PlayTab({
 
       <div ref={logRef} style={playTabStyles.logBox}>
         {log.length === 0 ? (
-          <span style={{ color: "#334155" }}>Historial...</span>
+          <span style={{ color: "#64748b" }}>Historial...</span>
         ) : (
           [...log].reverse().map(e => (
             <div
@@ -162,7 +162,7 @@ export function PlayTab({
                       ? "#4ade80"
                       : e.type === "warn"
                         ? "#fbbf24"
-                        : "#64748b",
+                          : "#94a3b8",
                 marginBottom: 2,
                 lineHeight: 1.5
               }}
@@ -172,7 +172,7 @@ export function PlayTab({
           ))
         )}
       </div>
-      <div style={{ fontSize: 10, color: "#334155", marginTop: 8, textAlign: "center" }}>
+      <div style={{ fontSize: 10, color: "#64748b", marginTop: 8, textAlign: "center" }}>
         Restantes: {remaining.length} - Numeros disponibles: {remaining.filter(c => c.type === "number" && !myNumbers.includes(c.value)).length}
       </div>
     </div>

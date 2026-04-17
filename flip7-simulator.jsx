@@ -11,16 +11,22 @@ export default function Flip7Simulator() {
   const sim = useSimEngine();
 
   const tabStyle = id => ({
-    background: "none",
-    border: "none",
-    borderBottom: tab === id ? "2px solid #a78bfa" : "2px solid transparent",
-    color: tab === id ? "#a78bfa" : "#475569",
-    padding: "11px 13px",
+    background: tab === id ? "linear-gradient(180deg,#1e1b4b,#111827)" : "#111827",
+    border: tab === id ? "1px solid #6366f1" : "1px solid #475569",
+    borderBottom: tab === id ? "2px solid #a78bfa" : "2px solid #64748b",
+    color: tab === id ? "#ddd6fe" : "#94a3b8",
+    padding: "12px 16px",
     cursor: "pointer",
-    fontSize: 12,
+    fontSize: 14,
     fontFamily: "inherit",
-    fontWeight: 600,
-    whiteSpace: "nowrap"
+    fontWeight: 700,
+    whiteSpace: "nowrap",
+    borderTopLeftRadius: 8,
+    borderTopRightRadius: 8,
+    marginTop: 6,
+    marginRight: 6,
+    boxShadow: tab === id ? "0 4px 14px rgba(99,102,241,0.2)" : "none",
+    transition: "all 160ms ease"
   });
 
   return (
@@ -28,11 +34,11 @@ export default function Flip7Simulator() {
       <div style={mainStyles.header}>
         <div style={mainStyles.shell}>
           <div style={mainStyles.headerTitleRow}>
-            <span style={{ fontSize: 26, fontWeight: 900, color: "#a78bfa", letterSpacing: -1 }}>FLIP</span>
-            <span style={{ fontSize: 40, fontWeight: 900, color: "#f9a8d4", letterSpacing: -2 }}>7</span>
-            <span style={{ fontSize: 12, color: "#7c3aed", marginLeft: 4, fontWeight: 600 }}>PROBABILITY ENGINE</span>
+            <span style={{ fontSize: 32, fontWeight: 900, color: "#a78bfa", letterSpacing: -1 }}>FLIP</span>
+            <span style={{ fontSize: 48, fontWeight: 900, color: "#f9a8d4", letterSpacing: -2 }}>7</span>
+            <span style={{ fontSize: 14, color: "#c4b5fd", marginLeft: 4, fontWeight: 700 }}>PROBABILITY ENGINE</span>
           </div>
-          <p style={{ color: "#6d28d9", fontSize: 11, margin: "2px 0 0" }}>
+          <p style={{ color: "#a78bfa", fontSize: 13, margin: "4px 0 0" }}>
             Estrategia optima por EV - Monte Carlo - 95 cartas
           </p>
         </div>
