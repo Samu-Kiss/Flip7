@@ -1,4 +1,51 @@
 export const simTabStyles = {
+  explainerCard: {
+    background: "linear-gradient(150deg,#111827,#0b1020)",
+    border: "1px solid #3730a3",
+    borderRadius: 12,
+    padding: "12px 12px 10px",
+    marginBottom: 12
+  },
+  explainerTitle: {
+    fontSize: 10,
+    color: "#c4b5fd",
+    fontWeight: 800,
+    marginBottom: 8,
+    letterSpacing: 0.4
+  },
+  explainerText: {
+    fontSize: 11,
+    color: "#cbd5e1",
+    lineHeight: 1.45,
+    marginBottom: 8
+  },
+  explainerList: {
+    display: "grid",
+    gap: 6
+  },
+  explainerItem: {
+    display: "flex",
+    gap: 8,
+    alignItems: "flex-start",
+    fontSize: 11,
+    color: "#94a3b8",
+    lineHeight: 1.4
+  },
+  explainerDot: {
+    width: 16,
+    height: 16,
+    borderRadius: 999,
+    background: "#3730a3",
+    border: "1px solid #6366f1",
+    color: "#e0e7ff",
+    fontSize: 10,
+    fontWeight: 800,
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexShrink: 0,
+    marginTop: 1
+  },
   settingsCard: {
     background: "#0b1020",
     border: "1px solid #1e1b4b",

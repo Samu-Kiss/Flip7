@@ -31,7 +31,29 @@ export function SimTab({ simRunning, runSimulation, simResults, simRounds, setSi
   return (
     <div>
       <h3 style={{ color: "#a78bfa", fontWeight: 800, margin: "0 0 4px", fontSize: 16 }}>Simulacion Monte Carlo</h3>
-      <p style={{ color: "#475569", fontSize: 12, margin: "0 0 12px" }}>{roundsText} rondas con estrategia optima</p>
+      <p style={{ color: "#94a3b8", fontSize: 12, margin: "0 0 12px" }}>{roundsText} rondas con estrategia optima</p>
+
+      <div style={simTabStyles.explainerCard}>
+        <div style={simTabStyles.explainerTitle}>COMO FUNCIONA Y PARA QUE SIRVE</div>
+        <div style={simTabStyles.explainerText}>
+          Monte Carlo repite la ronda miles de veces con mazos barajados aleatoriamente para estimar resultados reales,
+          no solo casos ideales.
+        </div>
+        <div style={simTabStyles.explainerList}>
+          <div style={simTabStyles.explainerItem}>
+            <span style={simTabStyles.explainerDot}>1</span>
+            <span>Simula muchas partidas completas con la misma estrategia de decision.</span>
+          </div>
+          <div style={simTabStyles.explainerItem}>
+            <span style={simTabStyles.explainerDot}>2</span>
+            <span>Calcula promedio de score, frecuencia de bust y probabilidad de Flip 7.</span>
+          </div>
+          <div style={simTabStyles.explainerItem}>
+            <span style={simTabStyles.explainerDot}>3</span>
+            <span>Te ayuda a validar si conviene jugar agresivo o conservar puntos con STAY.</span>
+          </div>
+        </div>
+      </div>
 
       <div style={simTabStyles.settingsCard}>
         <div style={simTabStyles.settingsTitle}>AJUSTES DE SIMULACION</div>
@@ -58,7 +80,7 @@ export function SimTab({ simRunning, runSimulation, simResults, simRounds, setSi
                 ...simTabStyles.presetButton,
                 opacity: simRunning ? 0.45 : 1,
                 borderColor: Number(simRounds) === preset ? "#6366f1" : "#1e1b4b",
-                color: Number(simRounds) === preset ? "#c7d2fe" : "#64748b"
+                color: Number(simRounds) === preset ? "#c7d2fe" : "#94a3b8"
               }}
             >
               {preset.toLocaleString()}
@@ -116,7 +138,7 @@ export function SimTab({ simRunning, runSimulation, simResults, simRounds, setSi
             ].map(([label, val, col]) => (
               <div key={label} style={simTabStyles.statCard}>
                 <div style={{ fontSize: 24, fontWeight: 900, color: col }}>{val}</div>
-                <div style={{ fontSize: 10, color: "#64748b", marginTop: 2 }}>{label}</div>
+                <div style={{ fontSize: 10, color: "#94a3b8", marginTop: 2 }}>{label}</div>
               </div>
             ))}
           </div>
@@ -148,7 +170,7 @@ export function SimTab({ simRunning, runSimulation, simResults, simRounds, setSi
                 </div>
               ))}
             </div>
-            <div style={{ fontSize: 10, color: "#334155", marginTop: 4 }}>Puntos por ronda</div>
+            <div style={{ fontSize: 10, color: "#94a3b8", marginTop: 4 }}>Puntos por ronda</div>
           </div>
           <div style={simTabStyles.conclusionsCard}>
             <div style={{ fontSize: 12, color: "#6366f1", fontWeight: 700, marginBottom: 10 }}>CONCLUSIONES</div>
@@ -175,7 +197,7 @@ export function SimTab({ simRunning, runSimulation, simResults, simRounds, setSi
                 <span style={{ fontSize: 16 }}>{icon}</span>
                 <div>
                   <div style={{ fontSize: 12, fontWeight: 700, color: "#c7d2fe" }}>{title}</div>
-                  <div style={{ fontSize: 11, color: "#64748b", marginTop: 1 }}>{body}</div>
+                  <div style={{ fontSize: 11, color: "#94a3b8", marginTop: 1 }}>{body}</div>
                 </div>
               </div>
             ))}
